@@ -54,6 +54,8 @@
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 500px;
+            width: 100%;
         }
 
         /* Hover effect */
@@ -62,10 +64,39 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
 
-        /* Video player */
-        iframe {
+        /* Responsive video */
+        .video-block iframe {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(188, 109, 109, 0.2);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 30px;
+            }
+            
+            .video-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .video-block {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .video-block {
+                width: 100%;
+            }
         }
 
     </style>
@@ -78,25 +109,25 @@
         <!-- Video 1 -->
         <div class="video-block">
             <p style="font-size: 20px; font-weight: bold;">Nariswana</p>
-            <iframe class="video" width="500" height="315" src="https://www.youtube.com/embed/LeVTfD6U5jA?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/LeVTfD6U5jA?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
 
         <!-- Video 2 -->
         <div class="video-block">
             <p style="font-size: 20px; font-weight: bold;">Jiunu Nai Hola</p>
-            <iframe class="video" width="500" height="315" src="https://www.youtube.com/embed/Zlh_5Eo91rY?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/Zlh_5Eo91rY?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
 
         <!-- Video 3 -->
         <div class="video-block">
             <p style="font-size: 20px; font-weight: bold;">Sahara</p>
-            <iframe class="video" width="500" height="315" src="https://www.youtube.com/embed/ZMhsvwpQPkw?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/ZMhsvwpQPkw?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
 
         <!-- Video 4 -->
         <div class="video-block">
             <p style="font-size: 20px; font-weight: bold;">Chinta</p>
-            <iframe class="video" width="500" height="315" src="https://www.youtube.com/embed/eARHYHeH2Gk?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/eARHYHeH2Gk?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
     </div>
 
@@ -129,7 +160,6 @@
         tag.src = "https://www.youtube.com/iframe_api";
         document.body.appendChild(tag);
     </script>
-    
 
 </body>
 </html>
